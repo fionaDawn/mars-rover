@@ -43,7 +43,7 @@ This project is written in Node. File structure is patterned to MVC style. Model
 6. What are the supported file inputs?
    .txt and .doc, but this program doesn't return error for unsupported file yet.
 
-### Any other notes you feel relevant for the evaluation of your solution?
+### Notes
 
 I initially thought of using linked list for getting the next orientation when a rover is 'M'oved. That way we won't have to keep track on the indeces but rather just get the next if 'R'ight or get the previous node when 'L'eft.
 
