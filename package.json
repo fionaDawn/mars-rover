@@ -1,0 +1,21 @@
+{
+  "name": "mars-rover",
+  "version": "1.0.0",
+  "description": "Command line app to navigate a rover's x and y position by inputting coordinates and direction",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "fiona potestas",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "27.0.6",
+    "lodash": "4.17.21"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}
