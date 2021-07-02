@@ -4,6 +4,7 @@
   "description": "Command line app to navigate a rover's x and y position by inputting coordinates and direction",
   "main": "bin/index.js",
   "scripts": {
+    "start": "node .",
     "test": "jest --coverage"
   },
   "author": "fiona potestas",

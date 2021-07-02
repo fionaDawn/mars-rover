@@ -7,8 +7,28 @@
 ### How to run locally?
 
 1. Clone this repo and run `npm install` in the root folder.
-2. To run on command line, run `node . "<sample configuration>"`
-3. To feed a file input run `node . <filepath>`
+2. To run on command line, run `npm start "<sample configuration>"`, e.g.
+
+```
+npm start "Plateau:5 5
+Rover1 Landing:1 2 N
+Rover1 Instructions:LMLMLMLMM
+Rover2 Landing:3 3 E
+Rover2 Instructions:MMRMMRMRRM"
+
+```
+
+or
+
+```
+npm start "Plateau:5 5\nRover1 Landing:1 2 N\nRover1 Instructions:LMLMLMLMM\nRover2 Landing:3 3 E\nRover2 Instructions:MMRMMRMRRM"
+```
+
+3. To feed a file input run `npm start <filepath>`, e.g.
+
+```
+npm start input.txt
+```
 
 ### How to test?
 
