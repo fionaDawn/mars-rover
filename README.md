@@ -18,12 +18,6 @@ Rover2 Instructions:MMRMMRMRRM"
 
 ```
 
-or
-
-```
-npm start "Plateau:5 5\nRover1 Landing:1 2 N\nRover1 Instructions:LMLMLMLMM\nRover2 Landing:3 3 E\nRover2 Instructions:MMRMMRMRRM"
-```
-
 3. To feed a file input run `npm start <filepath>`, e.g.
 
 ```
