@@ -8,9 +8,8 @@
   },
   "author": "fiona potestas",
   "license": "ISC",
-  "dependencies": {
-    "jest": "27.0.6",
-    "lodash": "4.17.21"
+  "devDependencies": {
+    "jest": "27.0.6"
   },
   "jest": {
     "testEnvironment": "node",
