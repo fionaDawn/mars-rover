@@ -28,7 +28,7 @@ describe("landRovers", function () {
   it("should return with error for cmd input", function () {
     console.log = jest.fn();
     landRovers(SAMPLE_INPUT_WITH_INVALID_COORDINATES);
-    expect(console.log).toHaveBeenCalledWith("Rover2:Out of Plateau's range");
+    expect(console.log).not.toHaveBeenCalledWith("Rover2:5 1 E");
   });
 
   it("should return with error for file input", function () {

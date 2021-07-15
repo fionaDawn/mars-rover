@@ -15,6 +15,17 @@ const Plateau = class {
   };
 
   addRover = (rover) => this.data.rovers.push(rover.data);
+
+  isCoordinatesTaken = (x, y) => {
+    const result = this.data.rovers.some((r) => {
+      const currentCoordinates = r.coordinates;
+      return (
+        currentCoordinates.x === parseInt(x) &&
+        currentCoordinates.y === parseInt(y)
+      );
+    });
+    return result;
+  };
 };
 
 module.exports = Plateau;

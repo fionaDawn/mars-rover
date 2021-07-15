@@ -1,7 +1,7 @@
 const { NORTH, EAST, SOUTH, WEST } = require("../constants");
 
 const Rover = class {
-  constructor(name, data, maxCoordinates) {
+  constructor(name, data, plateau) {
     this.data = {
       coordinates: {
         x: data.x,
@@ -10,21 +10,24 @@ const Rover = class {
       orientation: data.orientation,
       name: name,
       error: "",
-      maxCoordinates: maxCoordinates,
+      plateau: plateau,
     };
   }
-
-  isInvalidCoordinates = (x, y) =>
-    x < 0 ||
-    x > this.data.maxCoordinates.x ||
-    y < 0 ||
-    y > this.data.maxCoordinates.y;
 
   update = (newData) => {
     this.data = {
       ...this.data,
       ...newData,
     };
+  };
+
+  isInvalidCoordinates = (x, y) => {
+    return (
+      x < 0 ||
+      x > this.data.plateau.data.configuration.x ||
+      y < 0 ||
+      y > this.data.plateau.data.configuration.y
+    );
   };
 
   move = () => {
@@ -43,13 +46,19 @@ const Rover = class {
         --x;
         break;
     }
-    const res = this.isInvalidCoordinates(x, y);
-    const newData = res
-      ? { error: `${this.data.name}:Out of Plateau's range` }
-      : {
-          coordinates: { x: x, y: y },
-        };
-    this.update(newData);
+    const invalid =
+      this.data.plateau.isCoordinatesTaken(x, y) ||
+      this.isInvalidCoordinates(x, y);
+    if (!invalid)
+      this.update({
+        coordinates: { x: parseInt(x), y: parseInt(y) },
+      });
+    // const newData = invalid
+    //   ? { error: `${this.data.name}:Out of Plateau's range` }
+    //   : {
+    //       coordinates: { x: x, y: y },
+    //     };
+    // this.update(newData);
   };
 };
 
